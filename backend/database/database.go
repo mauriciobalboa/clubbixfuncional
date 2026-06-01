@@ -4,6 +4,7 @@ import (
 	"log"
 	"time"
 
+	"clubbix/backend/config"
 	"clubbix/backend/models"
 	"clubbix/backend/utils"
 	"github.com/glebarez/sqlite"
@@ -11,7 +12,9 @@ import (
 	"gorm.io/gorm/logger"
 )
 
-func InitDB(dbPath string, environment string) *gorm.DB {
+func InitDB(cfg *config.Config) *gorm.DB {
+	dbPath := cfg.DBPath
+	environment := cfg.Environment
 	logLevel := logger.Info
 	if environment == "production" {
 		logLevel = logger.Error
@@ -45,7 +48,7 @@ func InitDB(dbPath string, environment string) *gorm.DB {
 	}
 
 	log.Println("Banco de dados inicializado com sucesso")
-	seedDatabase(db)
+	seedDatabase(db, cfg)
 
 	return db
 }
@@ -55,37 +58,43 @@ func nowDate() time.Time {
 	return time.Date(now.Year(), now.Month(), now.Day(), 0, 0, 0, 0, now.Location())
 }
 
-func seedDatabase(db *gorm.DB) {
+func seedDatabase(db *gorm.DB, cfg *config.Config) {
 	log.Println("Sincronizando dados iniciais...")
 
-	adminPassword, _ := utils.HashPassword("Admin123!")
-	admin := models.Usuario{
-		NomeCompleto: "Administrador Clubbix",
-		CPFHash:      utils.HashCPF("11144477735"),
-		Email:        "admin@clubbix.com",
-		Telefone:     "65999999999",
-		SenhaHash:    adminPassword,
-		TipoUsuario:  models.TipoUsuarioAdmin,
-		StatusConta:  models.StatusContaAtiva,
-	}
-	var existingAdmin models.Usuario
-	if err := db.Where("email = ?", admin.Email).First(&existingAdmin).Error; err != nil {
-		db.Create(&admin)
+	// Admin — só cria se as env vars estiverem definidas
+	if cfg.AdminEmail != "" && cfg.AdminPassword != "" {
+		adminPassword, _ := utils.HashPassword(cfg.AdminPassword)
+		admin := models.Usuario{
+			NomeCompleto: "Administrador Clubbix",
+			CPFHash:      utils.HashCPF(cfg.AdminCPF),
+			Email:        cfg.AdminEmail,
+			Telefone:     "",
+			SenhaHash:    adminPassword,
+			TipoUsuario:  models.TipoUsuarioAdmin,
+			StatusConta:  models.StatusContaAtiva,
+		}
+		var existingAdmin models.Usuario
+		if err := db.Where("email = ?", admin.Email).First(&existingAdmin).Error; err != nil {
+			db.Create(&admin)
+		}
 	}
 
-	demoPassword, _ := utils.HashPassword("clubbix123")
-	demo := models.Usuario{
-		NomeCompleto: "Visitante Clubbix",
-		CPFHash:      utils.HashCPF("93541134780"),
-		Email:        "demo@clubbix.com.br",
-		Telefone:     "65992527948",
-		SenhaHash:    demoPassword,
-		TipoUsuario:  models.TipoUsuarioAssociado,
-		StatusConta:  models.StatusContaAtiva,
-	}
-	var existingDemo models.Usuario
-	if err := db.Where("email = ?", demo.Email).First(&existingDemo).Error; err != nil {
-		db.Create(&demo)
+	// Demo — só cria se as env vars estiverem definidas
+	if cfg.DemoEmail != "" && cfg.DemoPassword != "" {
+		demoPassword, _ := utils.HashPassword(cfg.DemoPassword)
+		demo := models.Usuario{
+			NomeCompleto: "Visitante Clubbix",
+			CPFHash:      utils.HashCPF(cfg.DemoCPF),
+			Email:        cfg.DemoEmail,
+			Telefone:     "",
+			SenhaHash:    demoPassword,
+			TipoUsuario:  models.TipoUsuarioAssociado,
+			StatusConta:  models.StatusContaAtiva,
+		}
+		var existingDemo models.Usuario
+		if err := db.Where("email = ?", demo.Email).First(&existingDemo).Error; err != nil {
+			db.Create(&demo)
+		}
 	}
 
 	planos := []models.Plano{

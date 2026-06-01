@@ -18,7 +18,7 @@ import (
 
 func main() {
 	cfg := config.LoadConfig()
-	db := database.InitDB(cfg.DBPath, cfg.Environment)
+	db := database.InitDB(cfg)
 
 	if cfg.Environment == "production" {
 		gin.SetMode(gin.ReleaseMode)

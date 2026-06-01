@@ -29,6 +29,14 @@ type Config struct {
 	// Payments
 	AppmaxToken    string
 	AppmaxOrderURL string
+
+	// Seed — credenciais iniciais (nunca hardcoded)
+	AdminEmail    string
+	AdminPassword string
+	AdminCPF      string
+	DemoEmail     string
+	DemoPassword  string
+	DemoCPF       string
 }
 
 func LoadConfig() *Config {
@@ -51,6 +59,13 @@ func LoadConfig() *Config {
 
 		AppmaxToken:    getEnv("APPMAX_TOKEN", ""),
 		AppmaxOrderURL: getEnv("APPMAX_ORDER_URL", "https://api.appmax.com.br/api/v3/order"),
+
+		AdminEmail:    getEnv("ADMIN_EMAIL", ""),
+		AdminPassword: getEnv("ADMIN_PASSWORD", ""),
+		AdminCPF:      getEnv("ADMIN_CPF", ""),
+		DemoEmail:     getEnv("DEMO_EMAIL", ""),
+		DemoPassword:  getEnv("DEMO_PASSWORD", ""),
+		DemoCPF:       getEnv("DEMO_CPF", ""),
 	}
 
 	// Em produção, usar variáveis de ambiente
