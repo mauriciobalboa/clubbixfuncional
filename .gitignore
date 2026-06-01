@@ -15,9 +15,13 @@ clubbix.db
 
 # ── Variáveis de ambiente (NUNCA subir para o git) ───────────────────────────
 .env
-.env.*
+.env.local
+.env.production
+.env.development
 backend/.env
-backend/.env.*
+backend/.env.local
+# .env.example é permitido (só tem placeholders, sem valores reais)
+!.env.example
 
 # ── Go ───────────────────────────────────────────────────────────────────────
 backend/vendor/
