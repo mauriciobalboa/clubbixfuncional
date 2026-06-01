@@ -8,18 +8,14 @@ ENV CGO_ENABLED=0 \
     GOOS=linux
 
 COPY backend/go.mod backend/go.sum ./
-RUN --mount=type=cache,target=/go/pkg/mod \
-    go mod download
+RUN go mod download
 
 COPY backend/ ./
 COPY tools/ ./tools/
 
-RUN --mount=type=cache,target=/go/pkg/mod \
-    --mount=type=cache,target=/root/.cache/go-build \
-    go build -trimpath -ldflags="-s -w" -o /out/clubbix-server ./main.go
+RUN go build -trimpath -ldflags="-s -w" -o /out/clubbix-server ./main.go
 
-RUN --mount=type=cache,target=/root/.cache/go-build \
-    go build -trimpath -ldflags="-s -w" -o /out/healthcheck ./tools/healthcheck
+RUN go build -trimpath -ldflags="-s -w" -o /out/healthcheck ./tools/healthcheck
 
 FROM gcr.io/distroless/static-debian12:nonroot AS runtime
 
