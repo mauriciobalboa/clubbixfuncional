@@ -6,12 +6,12 @@ backend/dist/
 backend/tmp/
 backend/temp/
 
-# ── Banco de dados (Railway cria o próprio na inicialização) ─────────────────
-backend/*.db
+# ── Banco de dados ───────────────────────────────────────────────────────────
 backend/*.db-journal
 backend/*.sqlite
 backend/*.sqlite3
 clubbix.db
+# backend/clubbix.db é commitado intencionalmente para deploy no Railway
 
 # ── Variáveis de ambiente (NUNCA subir para o git) ───────────────────────────
 .env
