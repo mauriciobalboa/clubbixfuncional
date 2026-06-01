@@ -1,0 +1,39 @@
+# ── Binários compilados ──────────────────────────────────────────────────────
+backend/clubbix.exe
+backend/*.exe
+backend/bin/
+backend/dist/
+backend/tmp/
+backend/temp/
+
+# ── Banco de dados (Railway cria o próprio na inicialização) ─────────────────
+backend/*.db
+backend/*.db-journal
+backend/*.sqlite
+backend/*.sqlite3
+clubbix.db
+
+# ── Variáveis de ambiente (NUNCA subir para o git) ───────────────────────────
+.env
+.env.*
+backend/.env
+backend/.env.*
+
+# ── Go ───────────────────────────────────────────────────────────────────────
+backend/vendor/
+backend/.gocache/
+
+# ── Configs locais de editor/IDE ─────────────────────────────────────────────
+frontend/.claude/
+.claude/
+.vscode/
+.idea/
+*.code-workspace
+
+# ── Sistema operacional ──────────────────────────────────────────────────────
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# ── Logs ─────────────────────────────────────────────────────────────────────
+*.log

@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="pt-BR" data-theme="dark">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Meu Clube — Clubbix</title>
+<meta name="description" content="Painel do membro Clubbix: seus descontos exclusivos em mais de 400 parceiros.">
+<meta name="theme-color" content="#160a28">
+<link rel="icon" type="image/png" href="assets/img/logo.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/style.css?v=13">
+<link rel="stylesheet" href="assets/css/painel.css?v=3">
+</head>
+<body class="page-clube">
+
+<!-- ===== sprite de ícones ===== -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs>
+  <symbol id="i-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h13M13 5l7 7-7 7"/></symbol>
+  <symbol id="i-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></symbol>
+  <symbol id="i-close" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 6L6 18M6 6l12 12"/></symbol>
+  <symbol id="i-search" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3"/></symbol>
+  <symbol id="i-logout" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 21H5.5A1.5 1.5 0 0 1 4 19.5v-15A1.5 1.5 0 0 1 5.5 3H9"/><path d="M16 17l5-5-5-5"/><path d="M21 12H9"/></symbol>
+  <symbol id="i-pin" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21.5S5 15.8 5 10a7 7 0 0 1 14 0c0 5.8-7 11.5-7 11.5z"/><circle cx="12" cy="10" r="2.6"/></symbol>
+  <symbol id="i-spark" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.5l2 5.7 5.7 2-5.7 2-2 5.7-2-5.7-5.7-2 5.7-2 2-5.7z"/></symbol>
+  <symbol id="i-star" viewBox="0 0 24 24" fill="currentColor"><path d="M12 3l2.7 5.6 6.1.9-4.4 4.3 1.1 6.1L12 18.2 6.5 21l1.1-6.1L3.2 10.5l6.1-.9L12 3z"/></symbol>
+  <symbol id="i-whats" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 0 0-8.6 15L2.1 22l5.1-1.3A10 10 0 1 0 12 2zm0 18.3a8.3 8.3 0 0 1-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.3 8.3 0 1 1 12 20.3zm4.6-6.2c-.3-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.2-.2.2-.6.7-.8.9-.1.2-.3.2-.5.1a6.8 6.8 0 0 1-3.4-3c-.3-.5.3-.4.7-1.4.1-.1 0-.3 0-.4l-.8-1.9c-.2-.5-.4-.4-.6-.5h-.5a1 1 0 0 0-.7.4 3 3 0 0 0-.9 2.2c0 1.3 1 2.6 1.1 2.7.1.2 1.9 3 4.7 4.2 2.8 1.2 2.8.8 3.3.8.5-.1 1.5-.7 1.7-1.3.2-.6.2-1.1.1-1.2 0-.1-.2-.2-.5-.3z"/></symbol>
+  <symbol id="i-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.6A8.5 8.5 0 1 1 11.4 3a6.6 6.6 0 0 0 9.6 9.6z"/></symbol>
+  <symbol id="i-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4.2"/><path d="M12 2.5v2.6M12 18.9v2.6M4.4 4.4l1.9 1.9M17.7 17.7l1.9 1.9M2.5 12h2.6M18.9 12h2.6M4.4 19.6l1.9-1.9M17.7 6.3l1.9-1.9"/></symbol>
+</defs></svg>
+
+<!-- ===== barra superior ===== -->
+<header class="clube-bar">
+  <a class="clube-logo" href="clube.html" aria-label="Clubbix">
+    <img src="assets/img/logo.png" alt="" width="40" height="40">
+    <span>Clubbix</span>
+  </a>
+  <div class="clube-bar-actions">
+    <a class="clube-site-link" href="index.html">Ver site</a>
+    <div class="clube-user">
+      <span class="clube-avatar" id="userAvatar">C</span>
+      <span class="clube-user-name" id="userNameTop">Membro</span>
+    </div>
+    <button class="btn btn-ghost btn-sm" id="logoutBtn"><svg class="ico"><use href="#i-logout"/></svg> Sair</button>
+  </div>
+</header>
+
+<main class="clube-main">
+  <!-- boas-vindas + cartão -->
+  <section class="clube-hero wrap">
+    <div class="clube-greet reveal">
+      <span class="sec-eyebrow"><svg class="ico"><use href="#i-spark"/></svg> Seu clube</span>
+      <h1>Olá, <span id="memberName" class="grad-text">Membro</span>! 👋</h1>
+      <p>Seus descontos exclusivos estão prontos. Bom aproveitar — e economizar muito!</p>
+      <div class="clube-stats">
+        <div class="cstat"><strong>+400</strong><span>parceiros</span></div>
+        <div class="cstat"><strong>12</strong><span>categorias</span></div>
+        <div class="cstat"><strong>50%</strong><span>desconto máx.</span></div>
+      </div>
+    </div>
+
+    <div class="member-card reveal" id="memberCard">
+      <div class="mc-shine" aria-hidden="true"></div>
+      <div class="mc-top">
+        <img src="assets/img/logo.png" alt="" width="38" height="38">
+        <span>Cartão de Membro</span>
+      </div>
+      <div class="mc-chip" aria-hidden="true"></div>
+      <div class="mc-name" id="mcName">NOME DO MEMBRO</div>
+      <div class="mc-row">
+        <div><small>Plano</small><strong id="mcPlan">—</strong></div>
+        <div><small>Matrícula</small><strong id="mcId">—</strong></div>
+        <div><small>Situação</small><strong class="mc-active">● Ativo</strong></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- descontos -->
+  <section class="clube-discounts wrap">
+    <div class="disc-head reveal">
+      <h2>Seus <span class="grad-text">descontos</span></h2>
+      <p>Mais de 400 parceiros esperando por você. Busque, filtre e economize.</p>
+    </div>
+
+    <div class="disc-tools reveal">
+      <div class="disc-search">
+        <svg class="ico"><use href="#i-search"/></svg>
+        <input type="search" id="partnerSearch" placeholder="Buscar parceiro pelo nome..." aria-label="Buscar parceiro">
+      </div>
+      <div class="disc-filters" id="catFilters" role="tablist" aria-label="Categorias">
+        <button class="catpill is-active" data-cat="todos">Todos</button>
+        <button class="catpill" data-cat="restaurantes">🍔 Restaurantes</button>
+        <button class="catpill" data-cat="saude">🩺 Saúde</button>
+        <button class="catpill" data-cat="educacao">📚 Educação</button>
+        <button class="catpill" data-cat="beleza">💇 Beleza</button>
+        <button class="catpill" data-cat="academias">🏋️ Academias</button>
+        <button class="catpill" data-cat="moda">🛍️ Moda</button>
+        <button class="catpill" data-cat="lazer">🎬 Lazer</button>
+        <button class="catpill" data-cat="farmacias">💊 Farmácias</button>
+        <button class="catpill" data-cat="pet">🐾 Pet</button>
+        <button class="catpill" data-cat="turismo">✈️ Turismo</button>
+        <button class="catpill" data-cat="automotivo">🚗 Automotivo</button>
+        <button class="catpill" data-cat="servicos">🔧 Serviços</button>
+      </div>
+    </div>
+
+    <p class="disc-count" id="discCount"></p>
+    <div class="partner-grid" id="partnerGrid"></div>
+    <p class="partner-empty" id="partnerEmpty" hidden>Nenhum parceiro encontrado por aqui. Tente outra busca ou categoria. 🔎</p>
+  </section>
+</main>
+
+<footer class="clube-foot">
+  <span>© <span id="year">2026</span> Clubbix · Mais que vantagens, momentos.</span>
+  <a href="index.html">Voltar ao site »</a>
+</footer>
+
+<!-- ===== modal do parceiro ===== -->
+<div class="modal" id="partnerModal" aria-hidden="true">
+  <div class="modal-backdrop" data-close-modal></div>
+  <div class="modal-card" role="dialog" aria-modal="true" aria-labelledby="pmName">
+    <button class="modal-close" data-close-modal aria-label="Fechar"><svg class="ico"><use href="#i-close"/></svg></button>
+    <span class="pm-emoji" id="pmEmoji" aria-hidden="true">🛍️</span>
+    <span class="pm-cat" id="pmCat">Categoria</span>
+    <h3 id="pmName">Parceiro</h3>
+    <div class="pm-disc" id="pmDisc">20% OFF</div>
+    <p class="pm-loc"><svg class="ico"><use href="#i-pin"/></svg> <span id="pmLoc">Cuiabá-MT</span></p>
+    <div class="pm-how">
+      <strong>Como usar seu desconto</strong>
+      <ol>
+        <li>Vá até o parceiro e escolha o que quiser.</li>
+        <li>Mostre o código abaixo ou o seu cartão de membro.</li>
+        <li>Pronto — desconto aplicado na hora!</li>
+      </ol>
+    </div>
+    <div class="pm-code">Código do desconto <b id="pmCode">CLB-0000</b></div>
+    <a class="btn btn-primary btn-block" id="pmWhats" href="https://wa.me/5565992527948" target="_blank" rel="noopener noreferrer">
+      <svg class="ico"><use href="#i-whats"/></svg> Tirar dúvida no WhatsApp
+    </a>
+  </div>
+</div>
+
+<script src="assets/js/api.js" defer></script>
+<script src="assets/js/painel.js?v=2" defer></script>
+</body>
+</html>

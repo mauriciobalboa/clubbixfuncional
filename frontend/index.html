@@ -1,0 +1,754 @@
+<!DOCTYPE html>
+<html lang="pt-BR" data-theme="dark">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Clubbix — Mais que vantagens, momentos</title>
+<meta name="description" content="Um clube exclusivo para quem escolhe bem. Acesso a +300 estabelecimentos parceiros em todo o Brasil.">
+<meta name="theme-color" content="#160a28">
+<link rel="icon" type="image/png" href="assets/img/logo.png">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Clubbix — Mais que vantagens, momentos">
+<meta property="og:description" content="Acesso exclusivo a benefícios em +300 parceiros selecionados em todo o Brasil.">
+<meta property="og:image" content="assets/img/logo.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/style.css?v=13">
+</head>
+<body class="page-home">
+
+<!-- ===================== ÍCONES (sprite SVG) ===================== -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <symbol id="i-cap" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M3 9.5l9-5 9 5-9 5-9-5z"/><path d="M7 11.7V17c0 1.7 2.7 3 5 3s5-1.3 5-3v-5.3"/><path d="M21 9.5V15"/>
+    </symbol>
+    <symbol id="i-star" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M12 3l2.7 5.6 6.1.9-4.4 4.3 1.1 6.1L12 18.2 6.5 21l1.1-6.1L3.2 10.5l6.1-.9L12 3z"/>
+    </symbol>
+    <symbol id="i-chat" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M21 11.5a8.4 8.4 0 0 1-12.8 7.2L3 20l1.3-5A8.4 8.4 0 1 1 21 11.5z"/>
+    </symbol>
+    <symbol id="i-send" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M21.5 2.5L11 13"/><path d="M21.5 2.5l-6.7 19-3.8-8.5L2.5 9.2l19-6.7z"/>
+    </symbol>
+    <symbol id="i-close" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M18 6L6 18M6 6l12 12"/>
+    </symbol>
+    <symbol id="i-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M5 12h13M13 5l7 7-7 7"/>
+    </symbol>
+    <symbol id="i-up" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M12 19V5M5 12l7-7 7 7"/>
+    </symbol>
+    <symbol id="i-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M20 6L9 17l-5-5"/>
+    </symbol>
+    <symbol id="i-mail" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <rect x="3" y="5" width="18" height="14" rx="2.6"/><path d="M3.5 6.5l8.5 6 8.5-6"/>
+    </symbol>
+    <symbol id="i-pin" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M12 21.5S5 15.8 5 10a7 7 0 0 1 14 0c0 5.8-7 11.5-7 11.5z"/><circle cx="12" cy="10" r="2.6"/>
+    </symbol>
+    <symbol id="i-heart" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M12 20.5l-1.6-1.4C5.4 14.7 2.5 12 2.5 8.6 2.5 5.9 4.6 3.8 7.3 3.8c1.6 0 3.1.8 4.1 2 1-1.2 2.5-2 4.1-2 2.7 0 4.8 2.1 4.8 4.8 0 3.4-2.9 6.1-7.9 10.5L12 20.5z"/>
+    </symbol>
+    <symbol id="i-spark" viewBox="0 0 24 24" fill="currentColor">
+      <path d="M12 2.5l2 5.7 5.7 2-5.7 2-2 5.7-2-5.7-5.7-2 5.7-2 2-5.7z"/>
+    </symbol>
+    <symbol id="i-whats" viewBox="0 0 24 24" fill="currentColor">
+      <path d="M12 2a10 10 0 0 0-8.6 15L2.1 22l5.1-1.3A10 10 0 1 0 12 2zm0 18.3a8.3 8.3 0 0 1-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.3 8.3 0 1 1 12 20.3zm4.6-6.2c-.3-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.2-.2.2-.6.7-.8.9-.1.2-.3.2-.5.1a6.8 6.8 0 0 1-3.4-3c-.3-.5.3-.4.7-1.4.1-.1 0-.3 0-.4l-.8-1.9c-.2-.5-.4-.4-.6-.5h-.5a1 1 0 0 0-.7.4 3 3 0 0 0-.9 2.2c0 1.3 1 2.6 1.1 2.7.1.2 1.9 3 4.7 4.2 2.8 1.2 2.8.8 3.3.8.5-.1 1.5-.7 1.7-1.3.2-.6.2-1.1.1-1.2 0-.1-.2-.2-.5-.3z"/>
+    </symbol>
+    <symbol id="i-instagram" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <rect x="3" y="3" width="18" height="18" rx="5.2"/><circle cx="12" cy="12" r="3.8"/><circle cx="17.4" cy="6.6" r="1.1" fill="currentColor" stroke="none"/>
+    </symbol>
+    <symbol id="i-link" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/>
+    </symbol>
+    <symbol id="i-copy" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/>
+    </symbol>
+  </defs>
+</svg>
+
+<!-- decoração de fundo flutuante -->
+<div class="bg-decor" aria-hidden="true">
+  <span class="blob blob-1"></span>
+  <span class="blob blob-2"></span>
+  <span class="blob blob-3"></span>
+  <span class="blob blob-4"></span>
+</div>
+
+<!-- ===================== CABEÇALHO ===================== -->
+<header class="site-header" id="topo">
+  <div class="header-inner">
+    <a class="brand" href="#topo" aria-label="Clubbix — início">
+      <img class="brand-logo" src="assets/img/logo.png" alt="Logo Clubbix" width="32" height="32">
+      <span class="brand-text">
+        <span class="brand-name">Clubbix</span>
+        <span class="brand-tag">Mais que vantagens, momentos</span>
+      </span>
+    </a>
+
+    <nav class="main-nav" id="mainNav" aria-label="Seções do site">
+      <div class="nav-indicator" id="navIndicator" aria-hidden="true"></div>
+      <button class="tab is-active" data-panel="0" type="button">
+        <span class="tab-i" aria-hidden="true"><svg class="ico"><use href="#i-spark"/></svg></span>Planos
+      </button>
+      <button class="tab" data-panel="1" type="button">
+        <span class="tab-i" aria-hidden="true"><svg class="ico"><use href="#i-star"/></svg></span>Exclusividade
+      </button>
+      <button class="tab" data-panel="2" type="button">
+        <span class="tab-i" aria-hidden="true"><svg class="ico"><use href="#i-heart"/></svg></span>Indique e Ganhe
+      </button>
+      <button class="tab" data-panel="3" type="button">
+        <span class="tab-i" aria-hidden="true"><svg class="ico"><use href="#i-heart"/></svg></span>Filantropia
+      </button>
+    </nav>
+
+    <div class="header-actions">
+      <a class="btn btn-ghost btn-sm" href="login.html" id="navLoginBtn">Entrar</a>
+      <a class="btn btn-ghost btn-sm" href="clube.html" id="navAccountBtn" hidden>Minha conta</a>
+    </div>
+  </div>
+</header>
+
+<main>
+
+
+  <!-- ===================== TAB PANELS ===================== -->
+  <div class="tab-panels-root" id="tab-root">
+
+    <!-- ── PAINEL 0 · PLANOS ─────────────────────────────── -->
+    <div class="tab-panel is-active" id="panel-0" role="tabpanel" aria-label="Planos">
+      <div class="panel-inner">
+        <!-- ===================== HERO ===================== -->
+        <section class="hero" id="inicio">
+          <div class="hero-inner">
+            <div class="hero-copy hero-enter">
+              <h1>Mais que vantagens,<br><span class="grad-text">momentos.</span></h1>
+              <p class="hero-lead">Um clube pensado para quem escolhe bem. Acesso a <strong>+300 estabelecimentos selecionados</strong> em todo o Brasil — experiências e benefícios que poucos têm.</p>
+              <a class="btn btn-primary" href="assinar.html" style="display:inline-block;margin-top:22px;margin-bottom:22px;">Fazer minha assinatura agora!</a>
+              <div class="hero-stats">
+                <div class="stat"><span class="stat-num"><span class="counter" data-target="400">0</span>+</span><span class="stat-label">estabelecimentos</span></div>
+                <div class="stat"><span class="stat-num"><span class="counter" data-target="12">0</span></span><span class="stat-label">categorias</span></div>
+                <div class="stat"><span class="stat-num">100%</span><span class="stat-label">digital</span></div>
+              </div>
+              <p class="hero-login">Já é membro? <a href="login.html">Acessar minha conta</a></p>
+            </div>
+
+            <div class="hero-visual hero-enter-delay" aria-hidden="true">
+              <div class="orbit">
+                <span class="orbit-ring ring-1"></span>
+                <span class="orbit-ring ring-2"></span>
+                <span class="orbit-ring ring-3"></span>
+                <span class="orbit-glow"></span>
+                <img class="orbit-core" src="assets/img/logo.png" alt="" width="150" height="148" decoding="async" fetchpriority="high">
+                <div class="sat sat-out s1"><span class="orbit-chip">Vivara</span></div>
+                <div class="sat sat-out s2"><span class="orbit-chip">Univag</span></div>
+                <div class="sat sat-out s3"><span class="orbit-chip">Dominos</span></div>
+                <div class="sat sat-mid s4"><span class="orbit-chip">Under Armor</span></div>
+                <div class="sat sat-mid s5"><span class="orbit-chip">Petz</span></div>
+                <div class="sat sat-out s6"><i class="orbit-dot"></i></div>
+                <div class="sat sat-mid s7"><i class="orbit-dot"></i></div>
+                <div class="sat sat-in s8"><i class="orbit-dot"></i></div>
+              </div>
+            </div>
+          </div>
+          <a class="scroll-cue" href="#planos-content" aria-label="Rolar para os planos"><span></span></a>
+        </section>
+
+        <div class="section" id="planos-content">
+          <div class="wrap">
+            <div class="section-head reveal">
+              <span class="sec-eyebrow"><svg class="ico"><use href="#i-spark"/></svg> Escolha o seu acesso</span>
+              <h2>Três níveis.<br><span class="grad-text">Um clube.</span></h2>
+              <p class="sec-lead">Cada plano garante acesso completo à rede de estabelecimentos selecionados do Clubbix — com benefícios que crescem conforme o seu compromisso.</p>
+            </div>
+
+            <div class="plans plans-3">
+              <!-- Básico -->
+              <article class="plan-card reveal">
+                <span class="plan-tag">Essencial</span>
+                <h4 class="plan-name">Básico</h4>
+                <div class="plan-price"><span class="plan-cur">R$</span><span class="plan-val">409,99</span></div>
+                <ul class="plan-feats">
+                  <li><svg class="ico"><use href="#i-check"/></svg> Acesso completo a +300 estabelecimentos</li>
+                  <li><svg class="ico"><use href="#i-check"/></svg> Cartão de membro digital</li>
+                </ul>
+                <a class="btn btn-outline btn-block" href="assinar.html?plano=basico">Assinar Básico</a>
+              </article>
+
+              <!-- Plus -->
+              <article class="plan-card reveal">
+                <span class="plan-tag">Equilibrado</span>
+                <h4 class="plan-name">Plus</h4>
+                <div class="plan-price"><span class="plan-cur">R$</span><span class="plan-val">699,99</span></div>
+                <ul class="plan-feats">
+                  <li><svg class="ico"><use href="#i-check"/></svg> Tempo de clube estendido com valor reduzido</li>
+                  <li><svg class="ico"><use href="#i-check"/></svg> Economia maior por dia de acesso</li>
+                </ul>
+                <a class="btn btn-outline btn-block" href="assinar.html?plano=plus">Assinar Plus</a>
+              </article>
+
+              <!-- Max (antigo Até o Fim) — MAIS ESCOLHIDO -->
+              <article class="plan-card is-featured reveal">
+                <span class="plan-badge">★ Mais escolhido</span>
+                <span class="plan-tag">Completo</span>
+                <h4 class="plan-name">Max</h4>
+                <div class="plan-price"><span class="plan-cur">R$</span><span class="plan-val">1.199,88</span></div>
+                <ul class="plan-feats">
+                  <li><svg class="ico"><use href="#i-check"/></svg> Maior tempo de acesso pelo melhor custo</li>
+                  <li><svg class="ico"><use href="#i-check"/></svg> Economize mais com o plano estendido</li>
+                </ul>
+                <a class="btn btn-primary btn-block" href="assinar.html?plano=max">Assinar Max</a>
+              </article>
+            </div>
+
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ── PAINEL 1 · EXCLUSIVIDADE ──────────────────────── -->
+    <div class="tab-panel" id="panel-1" role="tabpanel" aria-label="Exclusividade">
+      <div class="panel-inner">
+        <div class="section">
+          <div class="wrap">
+            <div class="section-head reveal">
+              <span class="sec-eyebrow"><svg class="ico"><use href="#i-star"/></svg> Só para membros</span>
+              <h2>O que separa um membro<br><span class="grad-text">de todo o resto</span></h2>
+              <p class="sec-lead">Os termos de cada parceria são negociados exclusivamente para quem faz parte do clube — e não estão disponíveis para o público geral.</p>
+            </div>
+
+            <div class="vs-wrap reveal">
+              <article class="vs-card is-bad">
+                <span class="vs-tag">Sem o Clubbix</span>
+                <span class="vs-price">R$ 1.690,50</span>
+                <span class="vs-desc">Mensalidade sem convênio Clubbix.</span>
+              </article>
+              <div class="vs-arrow" aria-hidden="true"><svg class="ico"><use href="#i-arrow"/></svg></div>
+              <article class="vs-card is-good">
+                <span class="vs-tag">Com o Clubbix</span>
+                <span class="vs-price">R$ 676,20 <small>-60%</small></span>
+                <span class="vs-desc">Mensalidade com convênio Clubbix. Apresentou o cartão, pagou o preço do clube.</span>
+              </article>
+            </div>
+            <p class="vs-note">Exemplo real: Administração (Noturno) UNIVAG 2026/1. Confirmar valor junto ao CAE.</p>
+
+            <ul class="exclusive-points">
+              <li class="reveal">
+                <span class="ep-ico"><svg class="ico"><use href="#i-star"/></svg></span>
+                <div><strong>Parcerias negociadas</strong><span>Cada acordo é fechado diretamente com o estabelecimento — só membros acessam.</span></div>
+              </li>
+              <li class="reveal">
+                <span class="ep-ico"><svg class="ico"><use href="#i-spark"/></svg></span>
+                <div><strong>Cartão de membro digital</strong><span>Tudo no celular. Mostrou, economizou. Sem burocracia.</span></div>
+              </li>
+              <li class="reveal">
+                <span class="ep-ico"><svg class="ico"><use href="#i-arrow"/></svg></span>
+                <div><strong>Rede em expansão</strong><span>Novos estabelecimentos entram toda semana — sua assinatura sempre cresce em valor.</span></div>
+              </li>
+            </ul>
+
+            <!-- ── PREVIEW DE DESCONTOS ── -->
+            <div class="disc-preview reveal">
+              <div class="disc-preview-head">
+                <span class="sec-eyebrow"><svg class="ico"><use href="#i-star"/></svg> Amostra exclusiva</span>
+                <h3>Uma prévia do que te espera dentro do clube</h3>
+                <p>Mais de 400 parceiros negociados só para membros. O código de desconto fica visível apenas após a adesão.</p>
+              </div>
+              <div class="disc-grid">
+
+                <div class="disc-card">
+                  <div class="dc-emoji-wrap">🍔</div>
+                  <span class="dc-cat">Restaurantes</span>
+                  <strong class="dc-name">Burger do Chef</strong>
+                  <span class="dc-pct">20% OFF</span>
+                  <span class="dc-loc"><svg class="ico" style="width:.85em;height:.85em"><use href="#i-pin"/></svg> Goiabeiras — Cuiabá-MT</span>
+                  <div class="dc-code-wrap">
+                    <span class="dc-code-label">Código do desconto</span>
+                    <span class="dc-code">CLB-102</span>
+                    <div class="dc-lock">
+                      <span>🔒</span>
+                      <span class="dc-lock-txt">Assine para desbloquear</span>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="disc-card">
+                  <div class="dc-emoji-wrap">🏥</div>
+                  <span class="dc-cat">Planos de Saúde</span>
+                  <strong class="dc-name">Hospital São Judas</strong>
+                  <span class="dc-pct">Condições exclusivas</span>
+                  <span class="dc-loc"><svg class="ico" style="width:.85em;height:.85em"><use href="#i-pin"/></svg> Centro — Cuiabá-MT</span>
+                  <div class="dc-code-wrap">
+                    <span class="dc-code-label">Código do desconto</span>
+                    <span class="dc-code">CLB-105</span>
+                    <div class="dc-lock">
+                      <span>🔒</span>
+                      <span class="dc-lock-txt">Assine para desbloquear</span>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="disc-card">
+                  <div class="dc-emoji-wrap">💇</div>
+                  <span class="dc-cat">Beleza</span>
+                  <strong class="dc-name">Studio Bella Hair</strong>
+                  <span class="dc-pct">30% OFF</span>
+                  <span class="dc-loc"><svg class="ico" style="width:.85em;height:.85em"><use href="#i-pin"/></svg> Goiabeiras — Cuiabá-MT</span>
+                  <div class="dc-code-wrap">
+                    <span class="dc-code-label">Código do desconto</span>
+                    <span class="dc-code">CLB-110</span>
+                    <div class="dc-lock">
+                      <span>🔒</span>
+                      <span class="dc-lock-txt">Assine para desbloquear</span>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="disc-card">
+                  <div class="dc-emoji-wrap">🏋️</div>
+                  <span class="dc-cat">Academias</span>
+                  <strong class="dc-name">PowerFit Academia</strong>
+                  <span class="dc-pct">40% OFF</span>
+                  <span class="dc-loc"><svg class="ico" style="width:.85em;height:.85em"><use href="#i-pin"/></svg> Jd. das Américas — Cuiabá-MT</span>
+                  <div class="dc-code-wrap">
+                    <span class="dc-code-label">Código do desconto</span>
+                    <span class="dc-code">CLB-112</span>
+                    <div class="dc-lock">
+                      <span>🔒</span>
+                      <span class="dc-lock-txt">Assine para desbloquear</span>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="disc-card">
+                  <div class="dc-emoji-wrap">🎬</div>
+                  <span class="dc-cat">Lazer</span>
+                  <strong class="dc-name">CineStar Cinemas</strong>
+                  <span class="dc-pct">30% OFF</span>
+                  <span class="dc-loc"><svg class="ico" style="width:.85em;height:.85em"><use href="#i-pin"/></svg> Shopping Centro — Cuiabá-MT</span>
+                  <div class="dc-code-wrap">
+                    <span class="dc-code-label">Código do desconto</span>
+                    <span class="dc-code">CLB-116</span>
+                    <div class="dc-lock">
+                      <span>🔒</span>
+                      <span class="dc-lock-txt">Assine para desbloquear</span>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="disc-card">
+                  <div class="dc-emoji-wrap">🚗</div>
+                  <span class="dc-cat">Automotivo</span>
+                  <strong class="dc-name">AutoCenter Premium</strong>
+                  <span class="dc-pct">20% OFF</span>
+                  <span class="dc-loc"><svg class="ico" style="width:.85em;height:.85em"><use href="#i-pin"/></svg> Coxipó — Cuiabá-MT</span>
+                  <div class="dc-code-wrap">
+                    <span class="dc-code-label">Código do desconto</span>
+                    <span class="dc-code">CLB-121</span>
+                    <div class="dc-lock">
+                      <span>🔒</span>
+                      <span class="dc-lock-txt">Assine para desbloquear</span>
+                    </div>
+                  </div>
+                </div>
+
+              </div><!-- .disc-grid -->
+              <p class="disc-cta-note">
+                <a href="assinar.html" class="btn btn-primary btn-lg" data-panel-link="0">
+                  <svg class="ico"><use href="#i-spark"/></svg> Desbloquear todos os parceiros
+                </a>
+              </p>
+            </div><!-- .disc-preview -->
+
+            <!-- Calculadora discreta -->
+            <div class="calc-section-inner reveal">
+              <h3 class="calc-inner-title">Quer saber sobre os benefícios na graduação?</h3>
+              <div class="course-calc">
+                <div class="cc-left">
+                  <label class="cc-label" for="courseSelect">Selecione o seu curso:</label>
+                  <div class="cc-select-wrap">
+                    <select id="courseSelect" aria-label="Curso">
+                      <option value="">— escolha seu curso —</option>
+                      <optgroup label="Bacharelados / Licenciaturas">
+                        <option value="adm">Administração</option>
+                        <option value="agro">Agronomia</option>
+                        <option value="arq">Arquitetura e Urbanismo</option>
+                        <option value="bio">Biomedicina</option>
+                        <option value="cont">Ciências Contábeis</option>
+                        <option value="chumanas">Ciências Humanas (Geo. e Hist.)</option>
+                        <option value="comso">Comunicação Social</option>
+                        <option value="dir">Direito</option>
+                        <option value="edfis">Educação Física</option>
+                        <option value="enf">Enfermagem</option>
+                        <option value="engamb">Engenharia Ambiental e Sanitária</option>
+                        <option value="engciv">Engenharia Civil</option>
+                        <option value="engali">Engenharia de Alimentos</option>
+                        <option value="engprod">Engenharia de Produção</option>
+                        <option value="engsw">Engenharia de Software</option>
+                        <option value="engele">Engenharia Elétrica</option>
+                        <option value="farm">Farmácia</option>
+                        <option value="fisio">Fisioterapia</option>
+                        <option value="fono">Fonoaudiologia</option>
+                        <option value="let">Letras</option>
+                        <option value="matfis">Matemática e Física (Lic.)</option>
+                        <option value="nutri">Nutrição</option>
+                        <option value="odonto">Odontologia</option>
+                        <option value="ped">Pedagogia</option>
+                        <option value="psico">Psicologia</option>
+                        <option value="servsoc">Serviço Social</option>
+                        <option value="si">Sistemas de Informação</option>
+                        <option value="terap">Terapia Ocupacional</option>
+                      </optgroup>
+                      <optgroup label="CST — Graduação Tecnológica">
+                        <option value="ads">Análise e Desenv. de Sistemas</option>
+                        <option value="bdd">Banco de Dados</option>
+                        <option value="cdt">Ciência de Dados</option>
+                        <option value="comext">Comércio Exterior</option>
+                        <option value="desin">Design de Interiores</option>
+                        <option value="estet">Estética e Cosmética</option>
+                        <option value="gastro">Gastronomia</option>
+                        <option value="gcom">Gestão Comercial</option>
+                        <option value="grh">Gestão de Recursos Humanos</option>
+                        <option value="gfin">Gestão Financeira</option>
+                        <option value="gpub">Gestão Pública</option>
+                        <option value="ia">Inteligência Artificial</option>
+                        <option value="jog">Jogos Digitais</option>
+                        <option value="log">Logística</option>
+                        <option value="mkt">Marketing</option>
+                        <option value="pgr">Processos Gerenciais</option>
+                        <option value="prodg">Produção de Grãos</option>
+                        <option value="radio">Radiologia</option>
+                        <option value="seginfo">Segurança da Informação</option>
+                      </optgroup>
+                    </select>
+                    <svg class="cc-chevron ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg>
+                  </div>
+
+                  <div id="periodWrap" hidden>
+                    <label class="cc-label" for="periodSelect" style="margin-top:20px">Selecione o período / modalidade:</label>
+                    <div class="cc-select-wrap">
+                      <select id="periodSelect" aria-label="Período">
+                        <option value="">— escolha o período —</option>
+                      </select>
+                      <svg class="cc-chevron ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg>
+                    </div>
+                  </div>
+                </div>
+                <div class="cc-right" id="ccRight">
+                  <div class="cc-metric"><span class="cc-metric-label">Mensalidade sem convênio</span><span class="cc-metric-val" id="ccFull">—</span></div>
+                  <div class="cc-divider"></div>
+                  <div class="cc-metric"><span class="cc-metric-label">Sua mensalidade Clubbix</span><span class="cc-metric-val cc-accent-lg" id="ccWith">—</span></div>
+                  <div class="cc-divider"></div>
+                  <div class="cc-metric"><span class="cc-metric-label">Economia por mês</span><span class="cc-metric-val cc-accent" id="ccMonth">—</span></div>
+                  <div class="cc-metric"><span class="cc-metric-label">Economia por ano</span><span class="cc-metric-val cc-accent-lg" id="ccYear">—</span></div>
+                  <div class="cc-divider"></div>
+                  <div class="cc-metric"><span class="cc-metric-label">Plano se paga em</span><span class="cc-metric-val cc-highlight" id="ccPayback">—</span></div>
+                  <p class="cc-note">Valores de descontos devem ser confirmados atráves do Centro de Atendimento ao Estudante (CAE).</p>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ── PAINEL 2 · INDIQUE E GANHE ────────────────────── -->
+    <div class="tab-panel" id="panel-2" role="tabpanel" aria-label="Indique e Ganhe">
+      <div class="panel-inner">
+        <div class="section">
+          <div class="wrap">
+            <div class="section-head reveal">
+              <span class="sec-eyebrow"><svg class="ico"><use href="#i-heart"/></svg> Programa de indicação</span>
+              <h2>Compartilhe e<br><span class="grad-text">ganhe juntos</span></h2>
+              <p class="sec-lead">Gere seu link exclusivo e leve seus amigos para o clube. Quem indicar recebe <strong>R$ 50,00 via PIX</strong> e o indicado ganha <strong>R$ 10,00 de desconto</strong> na assinatura.</p>
+            </div>
+
+            <div class="referral-wrap">
+              <div class="referral-steps reveal">
+                <div class="ref-step">
+                  <span class="ref-num">1</span>
+                  <div><strong>Informe seu WhatsApp</strong><p>Digite seu número com DDD para gerar seu link exclusivo de indicação com desconto.</p></div>
+                </div>
+                <div class="ref-step">
+                  <span class="ref-num">2</span>
+                  <div><strong>Compartilhe o link</strong><p>Mande para seus amigos por WhatsApp, grupos ou Instagram — eles ganham R$ 10,00 de desconto.</p></div>
+                </div>
+                <div class="ref-step">
+                  <span class="ref-num">3</span>
+                  <div><strong>Receba R$ 50,00 via PIX</strong><p>Quando seu amigo clicar no link, o WhatsApp dele já abre com a mensagem pronta para a Clubbix. Você recebe o PIX automaticamente após a adesão.</p></div>
+                </div>
+                <div class="ref-badge">
+                  <svg class="ico" style="font-size:1.4rem"><use href="#i-spark"/></svg>
+                  <span><strong>R$ 50,00</strong> via PIX para você · <strong>R$ 10,00</strong> de desconto para o indicado.</span>
+                </div>
+              </div>
+
+              <div class="referral-card reveal">
+                <h3>Gere seu link exclusivo</h3>
+                <p class="ref-card-lead" id="refCardLead">Informe seu nome para criar seu link de indicação personalizado.</p>
+
+                <!-- ── gate: não logado ── -->
+                <div class="ref-auth-gate" id="refAuthGate" hidden>
+                  <div class="ref-auth-icon" aria-hidden="true">🔒</div>
+                  <p>Apenas membros Clubbix podem gerar links de indicação e acompanhar seus ganhos.</p>
+                  <a href="assinar.html" class="btn btn-primary btn-block">Fazer parte agora <svg class="ico"><use href="#i-arrow"/></svg></a>
+                  <a href="login.html" class="btn btn-ghost btn-block ref-login-link">Já sou membro — Entrar</a>
+                </div>
+
+                <!-- ── badge: logado ── -->
+                <div class="ref-member-badge" id="refMemberBadge" hidden>
+                  <span class="rmb-avatar" id="refMemberInitials">?</span>
+                  <div class="rmb-info">
+                    <span class="rmb-name" id="refMemberName">—</span>
+                    <span class="rmb-plan" id="refMemberPlan">—</span>
+                  </div>
+                  <span class="rmb-check" aria-label="Membro verificado">✓</span>
+                </div>
+
+                <!-- ── campo de WhatsApp ── -->
+                <div class="field" id="refNameField">
+                  <label for="refName">Seu WhatsApp (com DDD)</label>
+                  <input type="tel" id="refName" name="refPhone" placeholder="(65) 99999-0000" autocomplete="tel" inputmode="numeric" maxlength="16">
+                </div>
+                <button type="button" id="refBtn" class="btn btn-primary btn-block">
+                  <svg class="ico"><use href="#i-link"/></svg> Gerar meu link de desconto
+                </button>
+                <p class="ref-error" id="refError" role="alert"></p>
+                <div class="ref-result" id="refResult" aria-live="polite">
+
+                  <!-- ── CARTEIRA CLUBBIX ── -->
+                  <div class="ref-wallet" aria-label="Sua carteira Clubbix">
+                    <div class="rw-orbs" aria-hidden="true">
+                      <span class="rw-orb rw-orb1"></span>
+                      <span class="rw-orb rw-orb2"></span>
+                    </div>
+                    <div class="rw-top">
+                      <span class="rw-brand-wrap">
+                        <img src="assets/img/logo.png" alt="" class="rw-logo" width="26" height="26">
+                        <span class="rw-brand">Clubbix</span>
+                      </span>
+                      <span class="rw-tag">Membro Indicador</span>
+                    </div>
+                    <div class="rw-name" id="refWalletName">—</div>
+                    <div class="rw-bottom">
+                      <div class="rw-code-block">
+                        <span class="rw-code-label">Número do indicador</span>
+                        <span class="rw-code" id="refWalletCode">—</span>
+                      </div>
+                      <span class="rw-chip">✦ Exclusivo</span>
+                    </div>
+                    <div class="rw-shine" aria-hidden="true"></div>
+                  </div>
+
+                  <p class="ref-result-label"><svg class="ico"><use href="#i-check"/></svg> Seu link de desconto está pronto!</p>
+                  <p style="font-size:.82rem;color:var(--ink-soft);margin-bottom:12px;line-height:1.5">Quando seu amigo clicar, o WhatsApp dele abre direto com a mensagem já escrita para a Clubbix — ele só precisa enviar. 🎉</p>
+                  <div class="ref-link-row">
+                    <input type="text" id="refLink" readonly aria-label="Seu link de indicação">
+                    <button type="button" id="refCopy" class="btn btn-outline btn-sm">
+                      <svg class="ico"><use href="#i-copy"/></svg> <span id="refCopyLabel">Copiar</span>
+                    </button>
+                  </div>
+                  <a id="refWhatsBtn" href="#" target="_blank" rel="noopener noreferrer" class="btn btn-ghost btn-block ref-whats-btn">
+                    <svg class="ico"><use href="#i-whats"/></svg> Compartilhar no WhatsApp
+                  </a>
+                </div>
+                <p class="ref-terms">Termos e condições do programa de indicação a serem divulgados em breve.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ── PAINEL 3 · FILANTROPIA ─────────────────────────── -->
+    <div class="tab-panel" id="panel-3" role="tabpanel" aria-label="Filantropia">
+      <div class="panel-inner">
+        <div class="section">
+          <div class="wrap">
+            <div class="section-head reveal">
+              <span class="sec-eyebrow"><svg class="ico"><use href="#i-heart"/></svg> Propósito que importa</span>
+              <h2>Seu acesso também<br><span class="grad-text">transforma vidas</span></h2>
+              <p class="sec-lead">Parte de cada plano assinado se converte em alimento doado a ONGs da nossa região. Fazer parte do clube é, também, fazer parte de algo maior.</p>
+            </div>
+
+            <div class="philan-card reveal-scale">
+              <div class="philan-copy">
+                <span class="sec-eyebrow light"><svg class="ico"><use href="#i-heart"/></svg> Pegada Filantrópica</span>
+                <h2>Sua assinatura também <span class="grad-text">alimenta</span> quem precisa</h2>
+                <p>A cada assinatura, uma parte se converte em alimento doado a ONGs de Cuiabá. Você acessa o melhor da cidade — e alguém recebe um prato de comida.</p>
+                <p><strong>Ano passado entregamos 500 kg — este ano vamos entregar 1 tonelada e meia.</strong></p>
+                <div class="progress" role="img" aria-label="Progresso da meta de doação: 90 por cento">
+                  <div class="progress-head"><span>Meta: 1,5 tonelada de alimentos</span><span class="progress-pct" data-target="90">0%</span></div>
+                  <div class="progress-track"><div class="progress-bar" data-fill="90"></div></div>
+                </div>
+                <p style="font-size:.85em;opacity:.7;margin-top:.5rem;">🗓️ Entrega/evento aguardando confirmação de data.</p>
+              </div>
+              <div class="philan-img-wrap">
+                <img src="assets/img/filantropia fade.png" alt="Equipe Clubbix realizando entrega de alimentos para ONGs de Cuiabá" class="philan-img" loading="lazy">
+              </div>
+            </div>
+
+            <div class="philan-numbers reveal">
+              <div class="philan-num-item">
+                <span class="philan-big"><span class="counter" data-target="90">0</span>%</span>
+                <span class="philan-lbl">da meta alcançada</span>
+              </div>
+              <div class="philan-num-item">
+                <span class="philan-big"><span class="counter" data-target="1350">0</span>kg</span>
+                <span class="philan-lbl">de alimentos arrecadados</span>
+              </div>
+              <div class="philan-num-item">
+                <span class="philan-big"><span class="counter" data-target="3">0</span></span>
+                <span class="philan-lbl">ONGs parceiras</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div><!-- /tab-panels-root -->
+
+  <!-- ===================== CONTATO — sempre visível ===================== -->
+  <section class="section contact" id="contato">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <span class="sec-eyebrow"><svg class="ico"><use href="#i-chat"/></svg> Contato</span>
+        <h2>Ficou com dúvida? <span class="grad-text">A gente responde</span></h2>
+        <p class="sec-lead">A forma mais rápida é com o Bixie, nosso assistente. Ele tira dúvidas na hora sobre planos, benefícios e mais.</p>
+      </div>
+
+      <div class="bot-banner reveal" role="button" tabindex="0" data-open-chat>
+        <span class="bot-banner-ico"><svg class="ico"><use href="#i-chat"/></svg></span>
+        <div class="bot-banner-txt">
+          <strong>Fale com o Bixie, nosso assistente</strong>
+          <span>Resposta imediata sobre planos, benefícios e indicações.</span>
+        </div>
+        <span class="btn btn-primary btn-sm bot-banner-btn">Abrir assistente</span>
+      </div>
+
+      <div class="contact-grid">
+        <form class="contact-form reveal" id="contactForm" novalidate>
+          <h3>Prefere mandar uma mensagem?</h3>
+          <p class="form-hint">Preencha abaixo e continuamos a conversa pelo WhatsApp.</p>
+          <div class="field">
+            <label for="cName">Seu nome</label>
+            <input type="text" id="cName" name="nome" placeholder="Como podemos te chamar?" required>
+          </div>
+          <div class="field">
+            <label for="cSubject">Assunto</label>
+            <select id="cSubject" name="assunto">
+              <option>Dúvida sobre os planos</option>
+              <option>Benefícios na graduação</option>
+              <option>Quero ser parceiro do Clubbix</option>
+              <option>Já sou membro / suporte</option>
+              <option>Programa de indicação</option>
+              <option>Outro assunto</option>
+            </select>
+          </div>
+          <div class="field">
+            <label for="cMsg">Mensagem</label>
+            <textarea id="cMsg" name="mensagem" rows="3" placeholder="Escreva sua dúvida ou mensagem..." required></textarea>
+          </div>
+          <button type="submit" class="btn btn-primary btn-block">
+            <svg class="ico"><use href="#i-whats"/></svg> Enviar pelo WhatsApp
+          </button>
+          <p class="form-feedback" id="formFeedback" role="status"></p>
+        </form>
+
+        <aside class="contact-cards reveal">
+          <a class="contact-card" href="https://wa.me/5565992527948" target="_blank" rel="noopener noreferrer">
+            <span class="c-ico c-whats"><svg class="ico"><use href="#i-whats"/></svg></span>
+            <span class="c-txt"><strong>WhatsApp</strong><span>(65) 99252-7948</span></span>
+          </a>
+          <a class="contact-card" href="mailto:contato@clubbix.com.br">
+            <span class="c-ico"><svg class="ico"><use href="#i-mail"/></svg></span>
+            <span class="c-txt"><strong>E-mail</strong><span>contato@clubbix.com.br</span></span>
+          </a>
+          <div class="contact-card is-static">
+            <span class="c-ico"><svg class="ico"><use href="#i-pin"/></svg></span>
+            <span class="c-txt"><strong>Onde estamos</strong><span>Av. Arquimedes Pereira Lima, sala 05 — Jd. das Américas, Cuiabá-MT</span></span>
+          </div>
+        </aside>
+      </div>
+    </div>
+  </section>
+</main>
+
+<!-- ===================== RODAPÉ ===================== -->
+<footer class="site-footer">
+  <div class="wrap footer-top">
+    <div class="footer-brand">
+      <img src="assets/img/logo.png" alt="Logo Clubbix" width="44" height="44" loading="lazy" decoding="async">
+      <p>Mais que vantagens, momentos. O clube exclusivo que conecta você às melhores experiências de Cuiabá.</p>
+      <div class="socials">
+        <a href="https://wa.me/5565992527948" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp"><svg class="ico"><use href="#i-whats"/></svg></a>
+        <a href="https://www.instagram.com/clubbixdescontos/" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><svg class="ico"><use href="#i-instagram"/></svg></a>
+        <a href="mailto:contato@clubbix.com.br" aria-label="E-mail"><svg class="ico"><use href="#i-mail"/></svg></a>
+      </div>
+    </div>
+    <nav class="footer-col" aria-label="Seções">
+      <h4>Navegue</h4>
+      <a href="#tab-root" data-panel-link="0">Planos</a>
+      <a href="#tab-root" data-panel-link="1">Exclusividade</a>
+      <a href="#tab-root" data-panel-link="2">Indique e Ganhe</a>
+      <a href="#tab-root" data-panel-link="3">Filantropia</a>
+    </nav>
+    <nav class="footer-col" aria-label="Clubbix">
+      <h4>Clubbix</h4>
+      <a href="assinar.html">Fazer parte</a>
+      <a href="login.html">Acessar minha conta</a>
+      <a href="#tab-root" data-panel-link="2">Indicar um amigo</a>
+      <a href="#contato">Falar com a gente</a>
+    </nav>
+    <div class="footer-col">
+      <h4>Contato</h4>
+      <a href="https://wa.me/5565992527948" target="_blank" rel="noopener noreferrer">(65) 99252-7948</a>
+      <a href="mailto:contato@clubbix.com.br">contato@clubbix.com.br</a>
+      <span class="footer-addr">Av. Arquimedes Pereira Lima, sala 05<br>Jd. das Américas — Cuiabá-MT</span>
+      <span class="footer-cnpj">CNPJ 55.466.679/0001-09</span>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>© <span id="year">2026</span> Clubbix · Todos os direitos reservados.</span>
+    <span>Mais que vantagens, momentos.</span>
+  </div>
+</footer>
+
+<button class="to-top" id="toTop" aria-label="Voltar ao topo"><svg class="ico"><use href="#i-up"/></svg></button>
+
+<!-- ===================== CHATBOT — CLUBBI ===================== -->
+<button class="chat-launcher" id="chatLauncher" aria-label="Abrir assistente virtual">
+  <span class="cl-icon"><svg class="ico"><use href="#i-chat"/></svg></span>
+  <span class="cl-label">Fale com o Bixie</span>
+  <span class="cl-ping"></span>
+</button>
+
+<section class="chatbot" id="chatbot" aria-label="Assistente virtual Bixie" aria-hidden="true">
+  <header class="chat-head">
+    <img class="chat-avatar" src="assets/img/logo.png" alt="" width="34" height="34" loading="lazy" decoding="async">
+    <div class="chat-id">
+      <strong>Bixie</strong>
+      <span><span class="online-dot"></span>Assistente Clubbix · online</span>
+    </div>
+    <button class="chat-close" id="chatClose" aria-label="Fechar assistente"><svg class="ico"><use href="#i-close"/></svg></button>
+  </header>
+  <div class="chat-body" id="chatBody" role="log" aria-live="polite"></div>
+  <div class="chat-foot">
+    <form id="chatForm">
+      <input type="text" id="chatInput" placeholder="Escreva sua dúvida..." autocomplete="off" aria-label="Mensagem para o Bixie">
+      <button type="submit" class="chat-send" aria-label="Enviar"><svg class="ico"><use href="#i-send"/></svg></button>
+    </form>
+  </div>
+</section>
+
+<script src="assets/js/script.js?v=5" defer></script>
+</body>
+</html>
