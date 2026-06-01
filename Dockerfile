@@ -1,5 +1,3 @@
-# syntax=docker/dockerfile:1.7
-
 FROM golang:1.21-bookworm AS builder
 
 WORKDIR /src/backend
