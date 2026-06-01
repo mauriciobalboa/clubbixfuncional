@@ -11,7 +11,7 @@ backend/*.db-journal
 backend/*.sqlite
 backend/*.sqlite3
 clubbix.db
-# backend/clubbix.db é commitado intencionalmente para deploy no Railway
+!backend/clubbix.db
 
 # ── Variáveis de ambiente (NUNCA subir para o git) ───────────────────────────
 .env
